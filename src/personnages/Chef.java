@@ -6,10 +6,10 @@ public class Chef {
 	private int effetPotion = 1;
 	private Village village;
 	
-	public Chef(String nom, int force, int effetPotion, Village village) {
+	public Chef(String nom, int force, Village village) {
+		assert force > 0;
 		this.nom = nom;
 		this.force = force;
-		this.effetPotion = effetPotion;
 		this.village = village;
 	}
 	
@@ -18,7 +18,7 @@ public class Chef {
 	}
 	
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "« " + texte + "»");
+		System.out.println(prendreParole() + "ï¿½ " + texte + "ï¿½");
 	}
 	
 	private String prendreParole() {
@@ -26,7 +26,7 @@ public class Chef {
 	}
 	
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " +
+		System.out.println(nom + " envoie un grand coup dans la mï¿½choire de " +
 	romain.getNom());
 		romain.recevoirCoup(force / 3);
 	}
